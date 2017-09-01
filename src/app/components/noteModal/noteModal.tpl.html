@@ -1,0 +1,30 @@
+<md-dialog aria-label="Mango (Fruit)">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{$ctrl.newNote?'Create note':'Update note'}}</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-input-container class="md-block">
+          <label>Note content</label>
+          <textarea ng-model="$ctrl.note.content" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+        <ms-notes-category-selector my-model="$ctrl.note.category"></ms-notes-category-selector>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="$ctrl.cancel()"  class="md-raised">
+        Cancel
+      </md-button>
+      <md-button ng-click="$ctrl.create()" class="md-raised md-primary">
+        {{$ctrl.newNote?'Create':'Update'}}
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

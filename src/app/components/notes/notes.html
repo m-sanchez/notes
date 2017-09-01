@@ -1,0 +1,13 @@
+<md-content class="md-padding">
+  <div layout="row" layout-wrap flex="98" flex-offset="1">
+
+    <div  flex="20" ng-repeat="(index, note) in $ctrl.notes">
+      <ms-note my-model="note" item-index="index"></ms-note>
+    </div>
+    <p ng-show="$ctrl.notes.length === 0">
+      You havent created any note. <a ng-click="$ctrl.newNote($event)">Create one now</a>
+    </p>
+  </div>
+  <md-button class="md-fab md-accent new-note"  ng-click="$ctrl.newNote($event)">  <md-icon md-svg-icon="add"
+  ></md-icon></md-button>
+</md-content>

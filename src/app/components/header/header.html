@@ -1,0 +1,25 @@
+<md-toolbar class="md-primary">
+  <div class="md-toolbar-tools">
+    <h2>
+      <span><a ui-sref="app.notes">Notes</a></span>
+    </h2>
+    <span flex></span>
+    <md-menu md-position-mode="target-right target" ng-show="$ctrl.$state.current.name === 'app.notes'">
+      <md-button aria-label="Open phone interactions menu" class="md-icon-button"
+                 ng-click="$ctrl.openMenu($mdMenu, $event)">
+        <md-icon md-menu-origin md-svg-icon="filter"></md-icon>
+      </md-button>
+      <md-menu-content width="4">
+        <h3>Filter by category</h3>
+        <ms-notes-category-selector my-model="$ctrl.currentFilter"></ms-notes-category-selector>
+
+        <md-button ng-click="$ctrl.filter()" class="md-raised md-primary">
+          Apply
+        </md-button>
+        <md-button ng-click="$ctrl.clearFilter()" class="md-raised " ng-show="$ctrl.filterApplied">
+          Clear Filters
+        </md-button>
+      </md-menu-content>
+    </md-menu>
+  </div>
+</md-toolbar>

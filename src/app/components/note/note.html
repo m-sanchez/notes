@@ -1,0 +1,14 @@
+<md-card class="note">
+  <md-card-content>
+    <p>{{$ctrl.note.content}}</p>
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="end center">
+    <span class="category">{{$ctrl.note.category || 'No category assigned'}}</span>
+    <md-button class="md-fab md-accent md-mini"  ng-click="$ctrl.remove($event,$ctrl.itemIndex)">  <md-icon
+      md-svg-icon="remove"
+    ></md-icon></md-button>
+    <md-button class="md-fab md-accent md-mini"  ng-click="$ctrl.editNote($event,$ctrl.itemIndex)">  <md-icon
+      md-svg-icon="edit"
+    ></md-icon></md-button>
+  </md-card-actions>
+</md-card>

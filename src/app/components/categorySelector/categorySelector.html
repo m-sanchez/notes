@@ -1,0 +1,17 @@
+<md-autocomplete
+  id="Auto"
+  md-no-cache="true"
+  md-search-text="$ctrl.searchText"
+  md-selected-item="$ctrl.myModel"
+  md-items="item in $ctrl.querySearch($ctrl.searchText)"
+  md-item-text="item"
+  md-min-length="0"
+  md-select-on-match = "true"
+  placeholder="Select category...">
+  <md-item-template>
+    <span md-highlight-text="$ctrl.searchText" md-highlight-flags="^i">{{item}}</span>
+  </md-item-template>
+  <md-not-found >
+    <a ng-click="$ctrl.addCategory($ctrl.searchText)">Create "{{$ctrl.searchText}}"</a>
+  </md-not-found>
+</md-autocomplete>
