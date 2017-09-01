@@ -29,7 +29,8 @@ export function notesService($rootScope, persistenceService, $mdDialog, $mdToast
     return persistenceService.getStorage('msCategories') || [];
   }
   function updateCategories(categories) {
-    return persistenceService.setStorage('msCategories', categories);
+    persistenceService.setStorage('msCategories', categories);
+    showToast('Categories updated');
   }
   function addNote(note) {
     const notes = persistenceService.getStorage('msNotes') || [];
