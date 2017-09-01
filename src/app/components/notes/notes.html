@@ -1,6 +1,9 @@
 <md-content class="md-padding">
   <div layout="row" layout-wrap flex="98" flex-offset="1">
-
+    <h4>Categories</h4>
+    <md-chips ng-model="$ctrl.categories"  md-removable="ctrl.removable"
+              md-on-remove="$ctrl.updateCategories($chip, $index)"
+              md-on-add="$ctrl.updateCategories($chip, $index)"></md-chips>
     <div  flex="20" ng-repeat="(index, note) in $ctrl.notes">
       <ms-note my-model="note" item-index="index"></ms-note>
     </div>

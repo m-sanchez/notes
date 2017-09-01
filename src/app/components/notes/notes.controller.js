@@ -9,9 +9,15 @@ class notesController {
   $onInit() {
     this.loadNotes();
     this.notesService.subscribe(this, this.loadNotes);
+    console.log(this.categories);
   }
+  updateCategories() {
+    this.notesService.updateCategories(this.categories);
+  }
+
   loadNotes(element) {
     const self = element || this;
+    self.categories = self.notesService.getCategories();
     self.allNotes = self.notesService.getNotes();
     if (self.$state.params.category) {
       self.notes = self.allNotes.filter(note => {
