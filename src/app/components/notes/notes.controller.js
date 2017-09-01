@@ -9,7 +9,6 @@ class notesController {
   $onInit() {
     this.loadNotes();
     this.notesService.subscribe(this, this.loadNotes);
-    console.log(this.categories);
   }
   updateCategories() {
     this.notesService.updateCategories(this.categories);

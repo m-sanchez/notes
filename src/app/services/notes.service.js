@@ -78,18 +78,11 @@ export function notesService($rootScope, persistenceService, $mdDialog, $mdToast
     return defer.promise;
   }
   function showToast(message) {
-    console.log('showing toast');
-    const position = {
-      bottom: false,
-      top: true,
-      left: false,
-      right: true
-    };
     $mdToast.show(
       $mdToast.simple()
         .textContent(message)
-        .position(position)
-        .hideDelay(3000)
+        .position('top right')
+        .hideDelay(500)
     );
   }
   function subscribe(element, callback) {
