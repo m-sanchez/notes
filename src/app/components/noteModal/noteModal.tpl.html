@@ -6,7 +6,6 @@
         <span flex></span>
       </div>
     </md-toolbar>
-
     <md-dialog-content>
       <div class="md-dialog-content">
         <md-input-container class="md-block">
@@ -22,7 +21,8 @@
       <md-button ng-click="$ctrl.cancel()"  class="md-raised">
         Cancel
       </md-button>
-      <md-button ng-click="$ctrl.create()" class="md-raised md-primary">
+      <md-button ng-click="$ctrl.create()" class="md-raised md-primary"
+                 ng-disabled="!$ctrl.note.content || $ctrl.note.content.length > 149">
         {{$ctrl.newNote?'Create':'Update'}}
       </md-button>
     </md-dialog-actions>
