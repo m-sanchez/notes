@@ -1,6 +1,6 @@
 import modalController from '../components/noteModal/noteModal.controller';
 
-function notesService($rootScope, persistenceService, $mdDialog, $mdToast, $q, $document) {
+export function notesService($rootScope, persistenceService, $mdDialog, $mdToast, $q, $document) {
   /* @ngInject */
 
   return {
@@ -103,5 +103,3 @@ function notesService($rootScope, persistenceService, $mdDialog, $mdToast, $q, $
     $rootScope.$emit('notes-updated');
   }
 }
-
-module.exports = notesService;

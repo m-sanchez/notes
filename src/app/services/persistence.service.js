@@ -1,6 +1,6 @@
 
-function persistenceService($window) {
-  const service = {
+export function persistenceService($window) {
+  return {
     getStorage,
     setStorage
   };
@@ -16,8 +16,5 @@ function persistenceService($window) {
       $window.localStorage.removeItem(key);
     }
   }
-
-  return service;
 }
 
-module.exports = persistenceService;
