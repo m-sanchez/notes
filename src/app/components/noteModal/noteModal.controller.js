@@ -1,11 +1,11 @@
 
 class addNoteController {
   constructor($mdDialog, note) {
-    if (note === null) {
+    if (note) {
+      this.note = angular.copy(note);
+    } else {
       this.newNote = true;
       this.note = {content: '', category: null};
-    } else {
-      this.note = angular.copy(note);
     }
     this.$mdDialog = $mdDialog;
   }
